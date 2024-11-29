@@ -114,4 +114,20 @@ function scrollActive() {
     })
 }
 
+
+function downloadFile(event) {
+    event.preventDefault();
+    const link = event.currentTarget;
+    const url = link.href;
+    window.open(url, "_blank");
+    const tempLink = document.createElement("a");
+    tempLink.href = url;
+    tempLink.download = "Shivangi_Resume.pdf";
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+}
+
+
+
 window.addEventListener('scroll', scrollActive)
